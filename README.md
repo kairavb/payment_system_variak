@@ -12,3 +12,6 @@ payment gateway, bank of variak
 npm install  
 node app.js  
 
+// upon successful completion of installation and running you will see the following  
+server port = 4000  
+Db Connected  
