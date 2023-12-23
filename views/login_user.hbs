@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/loginstyle.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<section class="login-block">
+    <div class="container">
+	<div class="row">
+		<div class="col-md-4 login-sec">
+		    <h2 class="text-center">User Login</h2>
+		    <form class="login-form" action="/login" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1" >Unique ID</label>
+    <input type="text" class="form-control" placeholder="Your Username" name="username">
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" >Password</label>
+    <input type="password" class="form-control" placeholder="Your Password" name="password">
+  </div><br>
+  
+  
+    <div class="form-check">
+<p><a href="/signup">Signup?</a></p>
+<a href="/">Homepage</a>
+   <center>
+    <button type="submit" class="btn btn-login" style="background-color: #6273de; color: #FFF;">Submit</button>
+  </center>
+  </div>
+  
+</form>
+<p style="color:red">{{errormsg}}</p>
+		</div>
+		<div class="col-md-8 banner-sec">
+      <img src="https://easypayments.online/media/cover.jpeg" alt="first pic" width="100%" height="535vh" style="border-radius: 5px;">
+		    
+		</div>
+	</div>
+</div>
+</section>
+  
+</body>
+</html>

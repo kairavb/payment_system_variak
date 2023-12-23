@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    #table1, #table2, #table3{
+      display: none;
+      width: 100%;
+    }
+    td:hover {
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+<body>
+<div class="row" id="dashboard">
+    <center>
+      <nav id="navbar" class="navbar navbar-light" style="background-color: #00101c; ">
+        <a href="/" class="btn btn-outline-dark" style="color: azure; padding: 20px;">Homepage</a>
+        <button class="btn btn-outline-dark" onclick="show(1);" type="button" style="color: azure; padding: 20px;">Transaction Table</button>
+        <button class="btn btn-outline-dark" onclick="show(2);" type="button" style="color: azure; padding: 20px;">Account Table</button>
+        <button class="btn btn-outline-dark" onclick="show(3);" type="button" style="color: azure; padding: 20px;">Card Table</button>
+        <form action="/" method="post"><button type="submit" class="btn btn-outline-dark" style="color: azure; padding: 20px;">Log Out</button></form>
+      </nav>
+    </center>
+    <div class="container">
+      <div class="table-responsive">    
+      <div id="table1">      
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Serial</th>
+            <th>Transaction ID</th>
+            <th>Senders ID</th>
+            <th>Recievers ID</th>
+            <th>Item ID</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Status</th>
+            {{!-- <th><center>Tools</center></th> --}}
+          </tr>
+        </thead>
+        <tbody>
+          {{#each transobj}}
+          <tr>
+            <td>{{@index}}</td>
+            <td>{{transid}}</td>
+            <td>{{suid}}</td>
+            <td>{{ruid}}</td>
+            <td>#Dashboard</td>
+            <td>{{amount}}</td>
+            <td>{{date}}</td>
+            <td>{{status}}</td>
+            {{!-- <td><center><button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;<button type="button" class="btn btn-danger">Delete</button></center></td> --}}
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      </div>
+      <div id="table2">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Serial</th>
+            <th>UID</th>
+            <th>Name</th>
+            <th>Email ID</th>
+            <th>Password</th>
+            <th>Mobile</th>
+            <th>Created on</th>
+            {{!-- <th><center>Tools</center></th> --}}
+          </tr>
+        </thead>
+        <tbody>
+          {{#each signobj}}
+          <tr>
+            <td>{{@index}}</td>
+            <td>{{uid}}</td>
+            <td>{{name}}</td>
+            <td>{{email}}</td>
+            <td>{{pass}}</td>
+            <td>{{mobile}}</td>
+            <td>{{date}}</td>
+            {{!-- <td><center><button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;<button type="button" class="btn btn-danger">Delete</button></center></td> --}}
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      </div>
+      <div id="table3">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Serial</th>
+            <th>UID</th>
+            <th>Card</th>
+            <th>CVV</th>
+            <th>Expiry</th>
+            <th>Balance</th>
+            {{!-- <th><center>Tools</center></th> --}}
+          </tr>
+        </thead>
+        <tbody>
+          {{#each cardobj}}
+          <tr>
+            <td>{{@index}}</td>
+            <td>{{uid}}</td>
+            <td>{{cardnumber}}</td>
+            <td>{{cvv}}</td>
+            <td>{{exp}}</td>
+            <td>{{bal}}</td>
+            {{!-- <td><center><button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;<button type="button" class="btn btn-danger">Delete</button></center></td> --}}
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      </div>
+      </div>
+    </div>
+</div>
+</body>
+<script>
+    function show(nr) {
+    document.getElementById("table1").style.display="none";
+    document.getElementById("table2").style.display="none";
+    document.getElementById("table3").style.display="none";
+    document.getElementById("table"+nr).style.display="inline-block";
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</html>

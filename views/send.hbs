@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/form.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="head">
+        <label style="font-size: 50px;">Bank of Variak</label>
+        <marquee style="margin-left: 2%; margin-right: 2%;">Security is our top priorty!</marquee>
+    </div>
+    <div class="login-page">
+        <div class="form">
+            <p style="color:red">{{errormsg}}</p>
+            <p style="color:green">{{code}}</p>
+            <form action="/send_money" method="post">
+                <input type="text", placeholder="Receiver's UID" name="uid">
+                <input type="number", placeholder="Card", maxlength="11" name="card">
+                <input type="number", placeholder="CVV", maxlength="3" name="cvv">
+                <input type="number", placeholder="Expiry", maxlength="4" name="exp">
+                <input type="number", placeholder="Amount", maxlength="10" name="amount">
+                <button type="submit">Send!</button>
+                <p class="message">Cancel Payment? <a href="/dashboard">Click here</a></p>
+
+            </form>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
