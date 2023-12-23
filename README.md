@@ -15,3 +15,6 @@ node app.js
 // upon successful completion of installation and running you will see the following  
 server port = 4000  
 Db Connected  
+
+// go to any web browser and write this in top bar  
+http://localhost:4000/  
