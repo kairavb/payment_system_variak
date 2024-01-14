@@ -107,6 +107,10 @@ app.post('/send_money', async (req,res)=>{
     }
 
     let suid = userdetail.uid;
+    if (suid == ruid){
+        return res.render('send',{errormsg:"You are transferring money to yourself!"});
+    }
+    
     let tid = suid + String(Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000);
     let time = new Date;
     let today = time.toLocaleDateString();
